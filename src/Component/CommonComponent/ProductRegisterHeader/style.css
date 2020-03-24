@@ -1,0 +1,67 @@
+.registerHeader {
+  width: 100%;
+  height: 40px;
+  background: #efefef;
+  padding: 35px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.registerHeader a {
+  text-decoration: none;
+  color: #f6305f;
+}
+
+.registerHeader__deals {
+  display: flex;
+  justify-content: space-between;
+}
+.registerHeader__deals h1 {
+  margin-right: 2rem;
+  cursor: pointer;
+}
+
+.registerHeader__country {
+  display: flex;
+  cursor: pointer;
+}
+
+.registerHeader__country__image {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.registerHeader__bag {
+  display: flex;
+}
+
+.registerHeader__bag__image {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.registerHeader__bag__cart {
+  position: relative;
+}
+
+.registerHeader__bag__count {
+  background: #f6305f;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  line-height: 1.6;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: absolute;
+  top: -10.5px;
+  left: 1.7rem;
+  text-align: center;
+}

@@ -1,0 +1,229 @@
+.home__card {
+  margin-top: 3rem;
+  position: relative;
+  display: flex;
+  flex-wrap : wrap
+}
+.home__card__parent {
+  flex: 1;
+  background-color: #fff;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 7rem 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+  backface-visibility: hidden;
+}
+.home__card__parent:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+.home__card__image {
+  width: 30rem;
+  height: 30rem;
+}
+.home__card__text {
+  margin-top: 1rem;
+  font-size: 30px;
+}
+.home__card__button {
+  margin-top: 2rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50em;
+  background-color: #f6305f;
+  color: #fff;
+  font-size: 16px;
+}
+.home__card__middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home__card__middle__button {
+  border: none;
+  padding: 2rem 3rem;
+  background-color: #f6305f;
+  border-radius: 50em;
+  color: #fff;
+  margin-top: 5rem;
+}
+.home__card__middle__image {
+  width: 20px;
+  height: 20px;
+  fill: #f6305f;
+}
+.home__card__hover:hover {
+  opacity: 0.1;
+}
+.home__card__hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.home__card__parent:hover .home__card__middle {
+  opacity: 1;
+}
+.home__card__dollar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home__card__dollar__hover {
+  opacity: 0.2;
+}
+.home__card__dollar__text {
+  margin-bottom: 2rem;
+  font-size: 30px;
+}
+.home__card__dollar__image {
+  width: 30rem;
+  height: 30rem;
+  margin-top: 2rem;
+}
+.home__card__dollar__button {
+  margin-top: 5rem;
+  border: none;
+  padding: 1rem 3rem;
+  color: #f6305f;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.mens-wear {
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), darkgray);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 8rem 10rem;
+  align-self: center;
+}
+.mens-wear__heading {
+  font-size: 46px;
+  font-weight: 400;
+}
+.mens-wear__list {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+.mens-wear__list__item {
+  flex: 0 0 30.333334%;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hot-section {
+  display: flex;
+  position: relative;
+}
+
+.hot-section__parent {
+  flex: 1;
+  margin-top: 2rem;
+  background-color: #fff;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  padding: 7rem 1rem;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+}
+.hot-section__parent__hot {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  border: none;
+  background-color: #f6305f;
+  padding: 1rem 2.5rem;
+  color: #fff;
+  font-size: 26px;
+}
+.hot-section__parent:hover {
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hot-section__button {
+  margin-top: 2rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 50em;
+  background-color: #f6305f;
+  color: #fff;
+  font-size: 16px;
+}
+
+.hot-section__middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hot-section__middle__button {
+  border: none;
+  padding: 2rem 3rem;
+  background-color: #f6305f;
+  border-radius: 50em;
+  color: #fff;
+  margin-top: 5rem;
+}
+.hot-section__middle__image {
+  width: 20px;
+  height: 20px;
+  fill: #f6305f;
+}
+
+.hot-section__parent:hover .hot-section__middle {
+  opacity: 1;
+}
+
+.hot-section__circle {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 5rem;
+}
+.hot-section__circle__one {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: blue;
+}
+.hot-section__circle__two {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: skyblue;
+}
+.hot-section__circle__three {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #f6305f;
+}
