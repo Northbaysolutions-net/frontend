@@ -1,6 +1,6 @@
 import * as types from "../utils/constants";
 
-const initialState = { items: [], item:{}, user: {}, cart: {}, error: {} };
+const initialState = { items: [], item: {}, user: {}, cart: {}, error: {}, register_user:{} };
 
 const reducer = (state = initialState, action) => {
   console.log(action.type);
@@ -17,10 +17,10 @@ const reducer = (state = initialState, action) => {
     case types.SIGNUP_REQUEST:
       return state;
     case types.SIGNUP_REQUEST_SUCCESS: {
-      return { ...state, user: action.payload };
+      return { ...state, register_user: action.payload };
     }
     case types.SIGNUP_REQUEST_FAILURE: {
-      return { ...state, user: action.payload };
+      return { ...state, register_user: action.payload };
     }
 
     case types.GET_ITEMS_REQUEST:

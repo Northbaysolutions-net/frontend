@@ -21,11 +21,10 @@ function App() {
       <Router>
         <Switch>
           <RestrictedRoute allowed={authenticate} path="/pdp/:id" component={Pdp} />
-          <Route path="/products" component={ProductList} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/" component={Login} />
-          <PublicRoute allowed={authenticate} path="/" component={Login} />
+          <Route path="/products" exact component={ProductList} />
+          <Route path="/signup" exact component={SignUp} />
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/" exact component={Login} />
         </Switch>
       </Router>
     </div>

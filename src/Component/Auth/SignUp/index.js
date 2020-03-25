@@ -25,7 +25,8 @@ class SignUp extends Component {
       [e.target.name]: e.target.value
     });
   };
-  onSubmit = () => {
+  onSubmit = (e) => {
+    e.preventDefault();
     const signUpData = {
       first_name: this.state.first_name,
       last_name: this.state.last_name,
@@ -34,12 +35,10 @@ class SignUp extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(signUpData);
     this.props.signUpRequest(signUpData, this.props.history);
   };
   render() {
-    if (this.props.user && this.props.user.success) {
-      console.log("Redirecting to signup");
+    if (this.props.register_user && this.props.register_user.success) {
       return <Redirect to="/" />;
     }
     return (
@@ -102,8 +101,8 @@ class SignUp extends Component {
                 required
                 onChange={this.handleChange}
               ></input>
-              {this.props.user && this.props.user.success === false ? (
-                this.props.user.errors.map((message, index) => {
+              {this.props.register_user && this.props.register_user.success === false ? (
+                this.props.register_user.errors.map((message, index) => {
                   return (
                     <li className="error_message" key={index}>
                       <p className="error_p">{message.message}</p>
@@ -140,7 +139,7 @@ class SignUp extends Component {
 }
 const mapStateToProps = state => {
   return {
-    user: state.user
+    register_user: state.register_user
   };
 };
 const mapDispachToProps = dispatch => {

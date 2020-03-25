@@ -28,7 +28,6 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     };
-    console.log(loginData);
     this.props.loginRequest(loginData, this.props.history);
   };
   render() {
@@ -108,7 +107,6 @@ class Login extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log(state.user);
   return {
     user: state.user
   };
