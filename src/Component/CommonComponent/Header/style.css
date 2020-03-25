@@ -1,0 +1,62 @@
+.shopmate {
+  width: 100%;
+  height: 40px;
+  background: #2e2e2e;
+  padding: 35px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopmate__heading {
+  color: #f6305f;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.shopmate__country {
+  display: flex;
+}
+
+.shopmate__country__title {
+  font-size: 22px;
+  margin-right: 4rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.shopmate__cart__div {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 5px;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.shopmate__cart__image {
+  width: 30px;
+  height: 30px;
+  margin-right: 1rem;
+}
+
+.shopmate__cart__count {
+  background-color: #fff;
+  color: #f6305f;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  line-height: 1.6;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  position: absolute;
+  top: -10.5px;
+  left: 1.7rem;
+  text-align: center;
+}
