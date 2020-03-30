@@ -1,11 +1,7 @@
 .shoppingpopup {
   width: 1000px;
-
-  margin: 6rem auto;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  margin: 0rem auto;
+  position: relative; 
   padding: 0 8rem;
   z-index: 1000;
 }
@@ -34,7 +30,17 @@
   font-size: 22px;
   margin-bottom: 3rem;
 }
-
+.shoppingpopup__empty__cart {
+  border: none;
+  background: #f6305f;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 50em;
+  font-size: 14px; 
+  font-weight: 700;
+  float: right;
+  margin-bottom: 3rem;
+}
 .shoppingpopup__table__price__L {
   margin-left: 1rem;
 }
@@ -159,6 +165,8 @@
   border: 1px solid #fff;
   font-size: 14px;
   color: #f6305f;
+  background: whitesmoke;
+  margin-top: 2rem;
 }
 
 .shoppingpopup__footer__checkout {

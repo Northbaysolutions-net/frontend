@@ -2,8 +2,13 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 
 const PublicRoute = ({ allowed, ...params }) => {
-  console.log(allowed,...params);
-  return !allowed ? <Route {...params} /> : <Redirect push to="/product" />;
+  // allowed = localStorage.getItem("Authenticated");
+  console.log(allowed);
+  return !allowed && allowed === null && allowed === false ? (
+    <Route {...params} />
+  ) : (
+    <Redirect push to="/products" />
+  );
 };
 
 export default PublicRoute;

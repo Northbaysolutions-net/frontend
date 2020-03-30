@@ -1,6 +1,14 @@
 import * as types from "../utils/constants";
 
-const initialState = { items: [], item: {}, user: {}, cart: {}, error: {}, register_user:{} };
+const initialState = {
+  items: [],
+  item: {},
+  user: {},
+  cart: {},
+  item_result:{},
+  error: {},
+  register_user: {}
+};
 
 const reducer = (state = initialState, action) => {
   console.log(action.type);
@@ -41,8 +49,44 @@ const reducer = (state = initialState, action) => {
       return { ...state, item: action.payload };
     }
 
+    case types.ADD_TO_CART_REQUEST:
+      return state;
+    case types.ADD_TO_CART_SUCCESS: {
+      return { ...state, item_result: action.payload };
+    }
+    case types.ADD_TO_CART_FAILURE: {
+      return { ...state, item_result: action.payload };
+    }
+
+    case types.GET_CART_REQUEST:
+      return state;
+    case types.GET_CART_SUCCESS: {
+      return { ...state, cart: action.payload };
+    }
+    case types.GET_CART_FAILURE: {
+      return { ...state, cart: action.payload };
+    }
+
+    case types.REMOVE_FROM_CART_REQUEST:
+      return state;
+    case types.REMOVE_FROM_CART_SUCCESS: {
+      return { ...state, item_result: action.payload };
+    }
+    case types.REMOVE_FROM_CART_FAILURE: {
+      return { ...state, item_result: action.payload };
+    }
+
+    case types.EMPTY_CART_REQUEST:
+      return state;
+    case types.EMPTY_CART_SUCCESS: {
+      return { ...state, item_result: action.payload };
+    }
+    case types.EMPTY_CART_FAILURE: {
+      return { ...state, item_result: action.payload };
+    }
+
     case types.RESET_ITEMS:
-      return { ...state, items: [] };
+      return { ...state, items: [], item: {} };
 
     default:
       return state;

@@ -24,6 +24,7 @@ class Login extends Component {
     });
   };
   onSubmit = () => {
+    console.log("on login");
     const loginData = {
       email: this.state.email,
       password: this.state.password
@@ -31,7 +32,8 @@ class Login extends Component {
     this.props.loginRequest(loginData, this.props.history);
   };
   render() {
-    if (this.props.user && this.props.user.success) {
+    if (this.props.user && this.props.user.success ) {      
+      // this.props.history.push('/products');
       return <Redirect to="/products" />;
     }
     return (
@@ -43,7 +45,7 @@ class Login extends Component {
               <h1>Sign In</h1>
             </div>
 
-            <form action="#" className="signin__form">
+            <form className="signin__form">
               <input
                 type="email"
                 name="email"
@@ -74,7 +76,7 @@ class Login extends Component {
                   <input
                     type="checkbox"
                     checked="checked"
-                    onChange={this.handleChange}
+                    onChange={e => this.handleChange}
                   ></input>
                   <span className="checkmark"></span>
                 </label>

@@ -10,9 +10,17 @@
 
 .registerHeader a {
   text-decoration: none;
-  color: #f6305f;
 }
-
+.registerHeader__logout {
+  border: none;
+  background: #f6305f;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 50em;
+  font-size: 14px; 
+  font-weight: 700;
+  float: right;
+}
 .registerHeader__deals {
   display: flex;
   justify-content: space-between;

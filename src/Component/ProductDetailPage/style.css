@@ -95,7 +95,11 @@
   left: 1.7rem;
   text-align: center;
 }
-
+.success_alert {
+  font-size: 20px;
+  width: inherit;
+  text-align: center;
+}
 .card {
   margin-top: 3rem;
   position: relative;
