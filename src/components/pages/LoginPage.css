@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap");
+
+.login-container {
+  padding-top: 10%;
+  width: 754px;
+  margin: 0 auto;
+}
+
+.input-login-field {
+  width: 754px;
+  height: 51px;
+  border: 1px solid #848484;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+.labels,
+.details-label {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.forgot,
+.remember {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2f80ed;
+
+}
+
+.forgot {
+  float: left;
+}
+
+.remember {
+  float: right;
+}
+
+.forgot-container {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.visible {
+  font-family: Roboto;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #eb5757;
+  text-align: left;
+}
+
+.hidden {
+  font-size: 0px;
+  display: none;
+}
+
+.error_icon {
+  margin: auto;
+  float: left;
+  padding-top: 10px ;
+}
+
+.login-button {
+  width: 754px;
+  height: 56px;
+  background: #2d9cdb;
+  border-radius: 3px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #ffffff;
+  border:0px;
+}
+
+.header-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 0px;
+}
+
+.error-mesage {
+  margin-bottom: 1em;
+  margin-top:5px ;
+}
+
+.remember-checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 0px;
+}
+
+.logo-div{
+  width:1170px;
+  margin: 0 auto;
+  }
