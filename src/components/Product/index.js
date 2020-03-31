@@ -5,9 +5,10 @@ import { getProductById } from '../../js/actions';
 import '../Product/Product.css';
 
 import { Navbar, Nav, Container, Row, Image, Col, Spinner, Button, Modal } from 'react-bootstrap'
-import { addChart, openModal, closeModal } from '../../js/actions/index';
-import Chart from '../Chart';
+import { addCart, openModal, closeModal } from '../../js/actions/index';
+import Cart from '../Cart';
 import User from '../User';
+import {url_image} from '../../constants.js'
 
 class Product extends React.Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class Product extends React.Component {
         const { product } = this.props;
         let total_price = product.price * quantity;
         total_price = total_price.toFixed(2);
-        this.props.addChart({ product_id, product, size, color, quantity, order_date, total_price });
+        this.props.addCart({ product_id, product, size, color, quantity, order_date, total_price });
     }
 
     render() {
@@ -83,19 +84,19 @@ class Product extends React.Component {
                     <Link to='/'> <Navbar.Brand  >Full Stack Challenge</Navbar.Brand></Link>
                     <Nav className="navbar-nav navbar-center">
                         <Link to="/"><Button variant="outline-danger" className=" mr-sm-2"  >Home</Button></Link>
-                        <Button className="chart-checkout" variant="outline-warning" className=" mr-sm-2" onClick={openModal}>Chart</Button>
+                        <Button className="chart-checkout" variant="outline-warning" className=" mr-sm-2" onClick={openModal}>Cart</Button>
                         <Link to="/checkout"><Button className="chart-checkout" variant="outline-danger" >Checkout</Button></Link>
                     </Nav>
                     <Navbar.Collapse className="justify-content-end">
                         <User />
                     </Navbar.Collapse>
                 </Navbar>
-                <Chart show={modal} close={closeModal} />
+                <Cart show={modal} close={closeModal} />
 
                 <Container fluid>
                     <Row>
                         <Col md={4}>
-                            <Image className="product-img" src={`http://localhost:3002/${product.image}`} />
+                            <Image className="product-img" src={`${url_image}${product.image}`} />
                         </Col>
                         <Col>
                             <h3 className="display-4">{product.name}</h3>
@@ -147,12 +148,12 @@ class Product extends React.Component {
 const mapDispatchToProps = dispatch => {
     return {
         getProductById: payload => dispatch(getProductById(payload)),
-        addChart: payload => dispatch(addChart(payload)),
+        addCart: payload => dispatch(addCart(payload)),
         openModal: payload => dispatch(openModal(payload)),
         closeModal: payload => dispatch(closeModal(payload))
     }
 }
 const mapStateToProps = state => {
-    return { product: state.product, chart: state.chart, modal: state.modal }
+    return { product: state.product, cart: state.cart, modal: state.modal }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Product))

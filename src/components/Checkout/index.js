@@ -22,11 +22,11 @@ class Checkout extends React.Component {
    
     placeOrder=()=>{
   
-        const{chart, customer_id} = this.props;
+        const{cart, customer_id} = this.props;
         const{first_name,last_name,address,city,state,zip_code,region} = this.state;
         let total_price=0;
-        let order_date=chart[0].order_date;
-        chart.map(p=>{
+        let order_date=cart[0].order_date;
+        cart.map(p=>{
           total_price+=parseFloat(p.total_price);
         })
         total_price=total_price.toFixed(2)
@@ -34,9 +34,9 @@ class Checkout extends React.Component {
   }
 
   sendOrderedItems = e =>{
-    const{chart,order_id}=this.props;
+    const{cart,order_id}=this.props;
     if(order_id){
-    chart.map(p=>{
+    cart.map(p=>{
      let product_id=p.product_id;
      let size=p.size;
      let color=p.color;
@@ -53,19 +53,19 @@ deleteOrder=e=>{
 }
 
     render(){
-        const {login, chart,order_state}=this.props;
+        const {login, cart,order_state}=this.props;
        
         if(login===false){
             return(<Redirect to="/login" />)
         }
-        if(chart.length === 0){
+        if(cart.length === 0){
           return(<Modal.Dialog>
             <Modal.Header closeButton>
               <Modal.Title>Empty Chart</Modal.Title>
             </Modal.Header>
           
             <Modal.Body>
-              <p>Please add Items in Chart to proceed for checkout</p>
+              <p>Please add Items in Cart to proceed for checkout</p>
             </Modal.Body>
           
             <Modal.Footer>
@@ -148,11 +148,11 @@ deleteOrder=e=>{
         
         <Row>
             <Col><Link to ="/"><Button variant="warning" style={{float:"left",width:"100%"}}>
-          Back
+          Continue Shopping
         </Button></Link></Col>
 
        <Col><Button variant="success" style={{float:"right",width:"100%"}} onClick={this.placeOrder}>
-          finish
+          Place Order
         </Button>
        </Col>
        
@@ -172,7 +172,7 @@ const mapDispatchToProps = dispatch => {
    }
 }
 const mapStateToProps = state => {
-    return { login: state.login, chart:state.chart, customer_id:state.customer_id, order_id:state.order_id,
+    return { login: state.login, cart:state.cart, customer_id:state.customer_id, order_id:state.order_id,
       order_state:state.order_state}
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Checkout))

@@ -66,11 +66,11 @@ export function addOrderedItem(payload) {
   return { type: ADD_ORDER_ITEM_REQUEST, payload };
 }
 
-export function addChart(payload) {
+export function addCart(payload) {
   return { type: ADD_CART_REQUEST, payload };
 }
 
-export function updateChart(payload) {
+export function updateCart(payload) {
   return { type: UPDATE_CART_REQUEST, payload };
 }
 

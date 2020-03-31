@@ -3,6 +3,7 @@ import { withRouter,Link, Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import {Button,Container, Col, Row,Image,Card, Spinner} from 'react-bootstrap';
 import Footer from '../Footer';
+import {url_image} from '../../constants.js'
 
 class AllProducts extends React.Component {
     constructor(props) {
@@ -26,7 +27,7 @@ render()
                 <Card key={p.product_id}><Card.Body>
                 <Link to={`/products/${p.product_id}`}>
                   <Row className="justify-content-md-center">
-                <Image className="product-image" src={`http://localhost:3002/${p.image}`} />
+                <Image className="product-image" src={`${url_image}${p.image}`} />
                   </Row></Link>
                   <Row className="justify-content-md-center">{p.name}</Row>
                <Row className="justify-content-md-center">${p.price}</Row>

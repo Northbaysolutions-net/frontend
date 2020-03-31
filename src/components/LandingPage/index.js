@@ -9,7 +9,7 @@ import {
 import '../LandingPage/LandingPage.css';
 
 import User from '../User';
-import Chart from '../Chart';
+import Cart from '../Cart';
 import AllProducts from '../AllProducts';
 import Paginations from '../Paginations';
 import Error from '../Error';
@@ -120,11 +120,11 @@ class LandingPage extends React.Component {
 
           </Navbar.Collapse>
           <Navbar.Collapse className="justify-content-end">
-          <Button className="chart-checkout" variant="outline-warning" className=" mr-sm-2" onClick={openModal}>Chart</Button>
+          <Button className="chart-checkout" variant="outline-warning" className=" mr-sm-2" onClick={openModal}>Cart</Button>
             <User />
           </Navbar.Collapse>
         </Navbar>
-        <Chart show={modal} close={closeModal} />
+        <Cart show={modal} close={closeModal} />
         <Error show={error}/>
         <Modal show={order_success} onHide={closeOrderSuccess}>
                     <Modal.Header closeButton>

@@ -32,13 +32,14 @@ const initialState = {
   customer_id: undefined,
   customer_name: undefined,
   order_id: undefined,
-  chart: [],
+  cart: [],
   modal: false,
   signup: false,
   order_state: false,
   order_success:false,
   error:false,
-  errorMessage:''
+  errorMessage:'',
+  total:0
 };
 
 function rootReducer(state = initialState, action) {
@@ -109,7 +110,7 @@ function rootReducer(state = initialState, action) {
     case ADD_ORDER_ITEM_REQUEST:
       return { ...state };
     case ADD_ORDER_ITEM_SUCCESS:{
-      return {...state, error:false, errorMessage:'',order_success:true,order_state:false,order_id:undefined,chart:state.chart.filter((i,index)=>i.product_id != action.payload.product_id)} 
+      return {...state, error:false, errorMessage:'',order_success:true,order_state:false,order_id:undefined,cart:state.cart.filter((i,index)=>i.product_id != action.payload.product_id)} 
     }     
     case ADD_ORDER_ITEM_FAILURE:
       return { ...state,  errorMessage: 'Failed to Create your Order', error: true };
@@ -119,10 +120,10 @@ function rootReducer(state = initialState, action) {
 
     // chart addition and update local
     case ADD_CART_REQUEST:
-      return { ...state, chart: [...state.chart, action.payload] };
+      return { ...state, cart: [...state.cart, action.payload], total:state.total+action.payload.total_price };
 
     case UPDATE_CART_REQUEST:
-      return { ...state, chart: action.payload, modal: true };
+      return { ...state, cart: action.payload, modal: true };
 
 
 
