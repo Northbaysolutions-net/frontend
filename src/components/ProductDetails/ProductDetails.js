@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Button, Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { ImageURL} from '../../constants'
 
 import PopUp from '../PopUp/PopUp';
 import APIs from '../../APIs/index';
@@ -47,7 +48,8 @@ class ProductDetails extends Component {
             price: this.props.product.price * this.state.quantity,
             color: this.state.color,
             size: this.state.size,
-            quantity: this.state.quantity
+            quantity: this.state.quantity,
+            thumbnail : this.props.product.thumbnail
 
           };
           let allEntries = [];
@@ -158,7 +160,7 @@ class ProductDetails extends Component {
             <Col>
               <Card.Img
                 variant='top'
-                src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(5).jpg'
+                src = {ImageURL + this.props.product.image} 
               />
             </Col>
             <Col>

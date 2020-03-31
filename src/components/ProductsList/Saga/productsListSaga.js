@@ -2,6 +2,7 @@ import {takeEvery, put , call} from 'redux-saga/effects'
 import APIs from '../../../APIs/index'
 
 
+
 const api = new APIs();
 
 function* getAllProductsAsync(actions){
@@ -13,7 +14,7 @@ function* getAllProductsAsync(actions){
         payLoad = actions.value;
     }
     payLoad["data"] = products.payload
-    yield put({type:'GET_ALL_PRODUCTS_ASYNC', value : payLoad})
+    yield put({type: products.type, value : payLoad})
     }
     catch(error)
     {
@@ -24,7 +25,7 @@ function* getAllProductsAsync(actions){
 function* getProductAsync(actions){
     try {
     const product = yield call(api.getProduct, actions.value);
-    yield put({type:'GET_PRODUCT_ASYNC', value : product.payload})
+    yield put({type:product.type, value : product.payload})
     }
     catch(error)
     {

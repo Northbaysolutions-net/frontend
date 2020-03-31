@@ -4,6 +4,8 @@ import { Table, Container, Col, Image, Row } from 'react-bootstrap';
 import '../Cart/Cart.css';
 import cross from '../../Images/cross.png';
 
+import { ImageURL} from '../../constants'
+
 class Cart extends Component {
   constructor(props) {
     super(props);
@@ -46,13 +48,12 @@ class Cart extends Component {
         <tr key={this.state.cartProducts[i].product_id}>
           <td>
             <Row>
-              <Col xs={6} md={4}>
+              <Col xs={4} md={4}>
                 <Image
-                  src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(5).jpg'
-                  thumbnail
+                  src={ImageURL + this.state.cartProducts[i].thumbnail}
                 />
               </Col>
-              <Col xs={6} md={4}>
+              <Col xs={4} md={8}>
                 <Row>
                   <b>{this.state.cartProducts[i].name}</b>
                 </Row>
@@ -69,7 +70,6 @@ class Cart extends Component {
             </Row>
           </td>
           <td>{this.state.cartProducts[i].size}</td>
-          <td>{this.state.cartProducts[i].color}</td>
           <td>{this.state.cartProducts[i].price}</td>
           <td>{this.state.cartProducts[i].quantity}</td>
         </tr>
@@ -84,7 +84,6 @@ class Cart extends Component {
             <tr>
               <th>Item</th>
               <th>Size</th>
-              <th>color</th>
               <th>Price</th>
               <th>Quantity</th>
             </tr>

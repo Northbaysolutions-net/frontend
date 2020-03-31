@@ -7,7 +7,7 @@ const api = new APIs();
 function* getAllCategoriesAsync(actions){
     try {
     const response = yield call(api.getAllCategories);
-    yield put({type:'GET_ALL_CATEGORIES_ASYNC', value : response.payload})
+    yield put({type: response.type, value : response.payload})
     }
     catch(error)
     {

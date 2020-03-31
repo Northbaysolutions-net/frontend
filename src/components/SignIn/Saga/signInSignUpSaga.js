@@ -8,7 +8,7 @@ function* signInAsync(actions){
 
     try {
     const authreturn = yield call(api.getSignIn, actions.value);
-    yield put({type:'SIGN_IN_ASYNC', value : authreturn.payload});
+    yield put({type:authreturn.type, value : authreturn.payload});
     alert("Logged In, Happy shopping");
     }
     catch(error)
@@ -22,7 +22,7 @@ function* signUpAsync(actions){
 
     try {
     const authreturn = yield call(api.postSignUp, actions.value);
-    yield put({type:'SIGN_IN_ASYNC', value : authreturn.payload})
+    yield put({type:authreturn.type, value : authreturn.payload})
     alert("Logged In, Happy shopping");
     }
     catch(error)

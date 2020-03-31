@@ -3,6 +3,7 @@ import { Button, Card, Container } from "react-bootstrap";
 import { connect } from "react-redux";
 
 import "../Product/Product.css";
+import { ImageURL} from '../../constants'
 
 class Product extends Component {
 
@@ -17,7 +18,7 @@ class Product extends Component {
         <Card style={{ width: "18rem" }}>
           <Card.Img
             variant='top'
-            src='https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/img%20(5).jpg'
+            src= {ImageURL + this.props.productDetails.thumbnail} 
           />
           <Card.Body>
             <Card.Title>{this.props.productDetails.name}</Card.Title>

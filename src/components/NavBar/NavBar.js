@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Navbar, Nav } from "react-bootstrap";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
+import { connect } from 'react-redux';
 import cart from '../../Images/cart.png'
 import './NavBar.css'
-import Model from "../Model/Model";
+import Model from '../Model/Model';
 
 
 class NavBar extends Component {
@@ -11,32 +11,31 @@ class NavBar extends Component {
 
   componentDidMount() {
     this.props.ongetAllCategories();
-    console.log("mount it!");
+    console.log('mount it!');
   }
 
   setMainPage = () =>
   {
     let data = {};
-    data["category_id"] = 0;
-    data["size"] = 0;
-    data["gender"] = 0;
-    data["color"] = 0;
-    data["order"] = 0
-    data["search"] = 0;
-    data["pageNo"] = 1;
+    data['category_id'] = 0;
+    data['size'] = 0;
+    data['gender'] = 0;
+    data['color'] = 0;
+    data['search'] = '';
+    data['pageNo'] = 1;
     this.props.ongetAllProducts(data);
     this.props.onSetProductList();
   }
 
   selectCategory = category_id => {
     let data = {};
-    data["category_id"] = category_id;
-    data["size"] = this.props.size;
-    data["gender"] = this.props.gender;
-    data["color"] = this.props.color;
-    data["order"] = this.props.order;
-    data["search"] = this.props.search;
-    data["pageNo"] = 1;
+    data['category_id'] = category_id;
+    data['size'] = this.props.size;
+    data['gender'] = this.props.gender;
+    data['color'] = this.props.color;
+    data['order'] = this.props.order;
+    data['search'] = this.props.search;
+    data['pageNo'] = 1;
     this.props.onSetProductList();
     this.props.ongetAllProducts(data);
   };
@@ -55,9 +54,9 @@ class NavBar extends Component {
     return (
       <div>
         <Navbar bg='dark' variant='dark'>
-          <Navbar.Brand onClick={this.setMainPage}>ShopMate</Navbar.Brand>
+          <Navbar.Brand onClick={this.setMainPage} style ={{cursor:'pointer'}}>ShopMate</Navbar.Brand>
           <Nav className='mr-auto'>{optionTemplate}</Nav>
-            <img src={cart} alt='cart'className=" image_cart_icon" onClick= {this.props.onSetShowModelTrue}/>
+            <img src={cart} alt='cart'className=' image_cart_icon' onClick= {this.props.onSetShowModelTrue}/>
         </Navbar>
         {this.props.ShowModel ?  
         <Model /> : null }  
@@ -80,10 +79,10 @@ const mapStoreToProps = store => {
 };
 const mapDispatchTOProps = dispatch => {
   return {
-    ongetAllCategories: () => dispatch({ type: "getAllCategories" }),
-    ongetAllProducts: data => dispatch({ type: "getAllProducts", value: data }),
-    onSetProductList: () => dispatch({ type: "setProductList" }),
-    onSetShowModelTrue: () => dispatch({ type: "setShowModelTrue" })
+    ongetAllCategories: () => dispatch({ type: 'getAllCategories' }),
+    ongetAllProducts: data => dispatch({ type: 'getAllProducts', value: data }),
+    onSetProductList: () => dispatch({ type: 'setProductList' }),
+    onSetShowModelTrue: () => dispatch({ type: 'setShowModelTrue' })
 
   };
 };

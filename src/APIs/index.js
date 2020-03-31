@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { URL } from '../constants';
-import { signIn, allProducts, products, allAttributes, allCategories , order} from '../store/actions/index';
+import { signIn, allProducts, products, allCategories , order} from '../store/actions/index';
 
 class API {
   getSignIn = object => {
@@ -63,7 +63,6 @@ class API {
     let url = URL + 'attribute_value?name=' + object.name;
     return axios.get(url).then(res => {
       return {
-        type: allAttributes,
         payload: { data: res.data }
       };
     });

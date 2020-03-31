@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TextField from 'material-ui/TextField';
 import APIs from '../../APIs/index';
+
 import './CheckOut.css';
 
 const api = new APIs();

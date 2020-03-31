@@ -1,4 +1,5 @@
 export const URL = 'http://localhost:9000/';
+export const ImageURL = 'http://localhost:3002/';
 
 
 export const information = 'INFORMATION'
