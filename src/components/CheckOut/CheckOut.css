@@ -1,0 +1,10 @@
+.container_allignment
+{
+    text-align: left;
+    display: block;
+}
+
+.div_position 
+{
+  position: inherit !important;
+}
