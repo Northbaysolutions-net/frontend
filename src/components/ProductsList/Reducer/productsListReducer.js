@@ -44,6 +44,13 @@ const reducer = (state = initialState, action ) =>
         newState.product = action.value.data[0]    
     }
 
+    if(action.type==='GET_ALL_PRODUCTS_ASYNC_ERROR')
+    {
+        newState.products = []
+        newState.totalPages = 1
+        newState.totalPages = 1
+    }
+
     return newState;
 
 

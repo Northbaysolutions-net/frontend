@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { URL } from '../constants';
-import { signIn, allProducts, products, allCategories , order} from '../store/actions/index';
+import { signIn, allProducts, products, allCategories , order, allProductsError} from '../store/actions/index';
 
 class API {
   getSignIn = object => {
@@ -42,11 +42,26 @@ class API {
     }
 
     return axios.get(url).then(res => {
+      debugger;
+      if (res.data.length === 0)
       return {
-        type: allProducts,
-        payload: { data: res.data }
-      };
-    });
+        type: allProductsError,
+        payload: {}
+        }
+      else
+      {
+        return {
+          type: allProducts,
+          payload: { data: res.data }
+        };
+      }
+    })
+    .catch(err => {
+      return {
+      type: allProductsError,
+      payload: {}
+      }
+    })
   };
 
   getProduct = object => {

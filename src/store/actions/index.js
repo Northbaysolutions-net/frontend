@@ -6,6 +6,7 @@ export const allAttributesColor = 'GET_ALL_COLOR_ATTRIBUTES_ASYNC';
 export const allAttributesGender = 'GET_ALL_GENDER_ATTRIBUTES_ASYNC';
 export const allCategories = 'GET_ALL_CATEGORIES_ASYNC';
 export const order = 'SET_ORDET_ID';
+export const allProductsError = 'GET_ALL_PRODUCTS_ASYNC_ERROR';
 
 export default signIn;
 
