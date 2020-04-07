@@ -1,0 +1,38 @@
+.filters {
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.sort {
+  margin-left: 4%;
+  margin-bottom: 2%;
+}
+.filter-row {
+  border-bottom: 1px solid black;
+}
+.pagination {
+  margin: 2%;
+}
+.products {
+  margin: 2%;
+  overflow: hidden;
+  text-align: center;
+}
+.product-image {
+  width: 80%;
+  height: 170px;
+}
+.header {
+  margin-left: 2%;
+}
+.clear {
+  background-color: yellow;
+}
+.spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.major {
+  position: relative;
+  padding-bottom: 6rem;
+}
