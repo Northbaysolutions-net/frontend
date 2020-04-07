@@ -1,0 +1,58 @@
+.outer-padding {
+  padding: 10;
+}
+
+.product-name {
+  margin-bottom: 20;
+  margin-top: 10;
+  font-size: 22;
+}
+
+.outer-div {
+  display: flex;
+}
+
+.img-border {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.product-detail {
+  flex: 1;
+  margin-left: 20;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-price {
+  font-size: 16;
+}
+
+.quantity {
+  margin-top: 20;
+  margin-bottom: 10;
+  width: 70;
+}
+
+.add-item-btn {
+  width: 170;
+  margin-top: 5;
+}
+
+.description-title {
+  margin-top: 20;
+  margin-bottom: 20;
+  font-size: 22;
+}
+
+.description-text {
+  max-height: 200;
+  font-size: 13;
+  overflow: auto;
+}
+
+/* let cartLength = Number(localStorage.getItem('cartLength'));
+if (!cartLength) {
+  cartLength = 0;
+} */
